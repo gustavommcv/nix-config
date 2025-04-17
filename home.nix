@@ -24,7 +24,6 @@
     spotify
     telegram-desktop
     evolution
-    discord
 
     libsForQt5.qt5ct
     papirus-icon-theme
