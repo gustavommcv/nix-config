@@ -6,12 +6,31 @@
  
   nixpkgs.config.allowUnfree = true; 
 
+  # Enable gtk
+  gtk.enable = true;
+  gtk.theme.package = pkgs.gnome-themes-extra;
+  gtk.theme.name = "Adwaita-dark";
+  gtk.iconTheme.package = pkgs.papirus-icon-theme;
+  gtk.iconTheme.name = "Papirus";
+
+  # Enable qt
+  qt.enable = true;
+  qt.platformTheme.name = "adwaita";
+  qt.style.name = "adwaita-dark";
+  qt.style.package = pkgs.adwaita-qt;
+
   home.packages = with pkgs; [
     vscode
     spotify
     telegram-desktop
     evolution
     discord
+
+    libsForQt5.qt5ct
+    papirus-icon-theme
+    adwaita-qt
+    adwaita-icon-theme
+    gnome-themes-extra
   ];
 
   programs.git = {
